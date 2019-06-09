@@ -22,7 +22,7 @@ class SServerBC:
     def send(self, data):
         try:
             self.socket.sendto(data.encode('utf8'), ('<broadcast>', cfg.BCASTPORT))
-            print("Mensagem enviada")
+            print("Enviado...")
             time.sleep(1)
         except:
             print('[SBC] - Dados fora do spectro')
