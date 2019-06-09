@@ -1,0 +1,38 @@
+import socket
+import cfg
+import os
+
+class ClientBroadcastClass(object):
+    def __init__(self, host = "", port = ""):
+        client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+        client.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        client.bind(("", cfg.BCASTPORT))
+        while True:
+            data  = client.recv(1024)
+            print("Received message: %s"%data.decode('utf8'))
+        
+
+    
+    
+    
+    
+    
+    
+    
+            
+
+def selfIp():
+    host = os.popen('hostname -I').read().replace(' \n', '')
+    return host
+#    def connectToSrv():
+#        self.socket.bind
+
+def Main():
+    
+   
+    
+
+    
+    
+if __name__ == '__main__':
+    Main()
